@@ -1,4 +1,5 @@
-import { Switch, Route, Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
+import './Client.css';
 import StudyCase from 'components/StudyCase';
 
 const Client = ({ data, path, url }) => {
@@ -19,11 +20,9 @@ const Client = ({ data, path, url }) => {
         </div>
       </div>
       <main>
-        <Switch>
-          <Route path={`${path}/:clientSlug`}>
-            <StudyCase data={data} />
-          </Route>
-        </Switch>
+        <Route path={`${path}/:clientSlug`}>
+          <StudyCase data={{clientName: data.clientName, title: data.title, description: data.description}} />
+        </Route>
       </main>
     </div>
   );

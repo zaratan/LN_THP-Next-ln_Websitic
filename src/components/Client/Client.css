@@ -10,7 +10,6 @@ div.Client > div.card {
   flex-direction: column;
   width: 290px;
   min-height: 0;
-  background: #fff;
   padding: 0;
   border: none;
   border-radius: .28571429rem;
@@ -48,13 +47,11 @@ div.Client > div.card > div.content > div.header {
   line-height: 1.28571429em;
   display: block;
   font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  color: rgba(0, 0, 0, .85);
 }
  
 div.Client > div.card > div.content > div.description {
   margin-top: .5em;
   clear: both;
-  color: rgba(0, 0, 0, .68);
 }
  
 div.Client > div.card > div.content > div.extra {
@@ -70,68 +67,9 @@ div.Client > div.card > div.content > div.extra {
   padding: .75em .75em 0 .75em;
   top: 0;
   left: 0;
-  color: rgba(0, 0, 0, .4);
   box-shadow: none;
   transition: color .1s ease;
   border: none;
   font-size: 1em;
   border-radius: 0 0 .28571429rem .28571429rem !important;
-}
-
-div.Client > div.card > div.content > div.extra > div.two-buttons {
-  box-shadow: none;
-  width: 100%;
-  display: inline-flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  flex-direction: row;
-  font-size: 0;
-  vertical-align: baseline;
-  margin: 0 .05em 0 0;
-}
-
-div.Client > div.card > div.content > div.extra > div.two-buttons > button.basic-button {
-  width: 50%;
-  flex: 1 0 auto;
-  border-radius: 0;
-  margin: 0;
-  background: transparent none !important;
-  font-weight: 400;
-  text-transform: none;
-  text-shadow: none !important;
-  font-size: 1rem;
-  cursor: pointer;
-  display: inline-block;
-  min-height: 1em;
-  outline: 0;
-  border: none;
-  vertical-align: baseline;
-  font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  padding: .5em .2em .5em;
-  line-height: 1em;
-  font-style: normal;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  transition: opacity .1s ease, background-color .1s ease, color .1s ease, box-shadow .1s ease, background .1s ease, -webkit-box-shadow .1s ease;
-  -webkit-appearance: button;
-  overflow: visible;
-}
-
-div.Client > div.card > div.content > div.extra > div.two-buttons > button.green-basic-button {
-  border-left: none;
-  margin-left: 0;
-  border-top-left-radius: .28571429rem;
-  border-bottom-left-radius: .28571429rem;
-  box-shadow: 0 0 0 1px #21ba45 inset !important;
-  color: #21ba45 !important;
-}
-
-div.Client > div.card > div.content > div.extra > div.two-buttons > button.red-basic-button {
-  margin-left: -1px;
-  border-top-right-radius: .28571429rem;
-  border-bottom-right-radius: .28571429rem;
-  box-shadow: 0 0 0 1px #db2828 inset !important;
-  color: #db2828 !important;
-  -webkit-box-flex: 1;
 }
