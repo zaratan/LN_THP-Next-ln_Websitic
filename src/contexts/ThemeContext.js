@@ -1,24 +1,29 @@
 import React, { createContext, useState } from 'react';
+import PropTypes from 'prop-types';
 
-export const ThemeContext = createContext();
+const ThemeContext = createContext();
 
-const ThemeContextProvider = (props) => {
-  const themeLS = window.localStorage.getItem("theme");
-  console.log({themeLS});
-  const themeInit = (!themeLS || themeLS === "") ? true : JSON.parse(themeLS);
-  console.log({themeInit});
+export const ThemeContextProvider = ({ children }) => {
+  const themeLS = window.localStorage.getItem('theme');
+  console.log({ themeLS });
+  const themeInit = !themeLS || themeLS === '' ? true : JSON.parse(themeLS);
+  console.log({ themeInit });
   const [theme, setTheme] = useState(themeInit);
-   
+
   const toggleTheme = () => {
     setTheme(!theme);
-    window.localStorage.setItem("theme", JSON.stringify(!theme));
-  }
-   
+    window.localStorage.setItem('theme', JSON.stringify(!theme));
+  };
+
   return (
-    <ThemeContext.Provider value={{theme, toggleTheme}}>
-      {props.children}
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
     </ThemeContext.Provider>
   );
 };
 
-export default ThemeContextProvider;
+ThemeContextProvider.propTypes = {
+  children: PropTypes.node,
+};
+
+export default ThemeContext;
