@@ -1,22 +1,29 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 const ThemeContext = createContext();
 
+const LS_THEME_KEY = 'ThemeContext:isLight';
+
 export const ThemeContextProvider = ({ children }) => {
-  const themeLS = window.localStorage.getItem('theme');
-  console.log({ themeLS });
-  const themeInit = !themeLS || themeLS === '' ? true : JSON.parse(themeLS);
-  console.log({ themeInit });
-  const [theme, setTheme] = useState(themeInit);
+  const [isLight, setIsLight] = useState(true);
+
+  useEffect(() => {
+    const isLightLS = JSON.parse(window.localStorage.getItem(LS_THEME_KEY));
+
+    if (isLightLS !== undefined && isLightLS !== null && isLightLS !== '') {
+      setIsLight(isLightLS);
+    }
+  }, []);
 
   const toggleTheme = () => {
-    setTheme(!theme);
-    window.localStorage.setItem('theme', JSON.stringify(!theme));
+    const newIsLight = !isLight;
+    setIsLight(newIsLight);
+    window.localStorage.setItem('theme', JSON.stringify(newIsLight));
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ isLight, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );

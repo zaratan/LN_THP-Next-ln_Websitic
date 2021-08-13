@@ -9,10 +9,10 @@ import Navbar from './components/Navbar';
 import ThemeContext from './contexts/ThemeContext';
 
 function App() {
-  const { theme } = useContext(ThemeContext);
+  const { isLight } = useContext(ThemeContext);
 
   return (
-    <div className={theme ? 'App light' : 'App dark'}>
+    <div className={isLight ? 'App light' : 'App dark'}>
       <Router>
         <Navbar />
         <BtnToggle />
