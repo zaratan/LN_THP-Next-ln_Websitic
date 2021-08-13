@@ -19,10 +19,10 @@ const Client = ({ data, url }) => (
 
 Client.propTypes = {
   url: PropTypes.string,
-  data: {
+  data: PropTypes.shape({
     title: PropTypes.string,
     clientName: PropTypes.string,
-  },
+  }),
 };
 
 export default Client;
