@@ -6,6 +6,7 @@ import BtnToggle from 'components/BtnToggle';
 import Home from 'pages/Home';
 import About from 'pages/About';
 import Works from 'pages/Works';
+import StudyCase from 'components/StudyCase';
 
 function App() {
   const {theme} = useContext(ThemeContext);
@@ -20,11 +21,14 @@ function App() {
             <Route path="/" exact>
               <Home />
             </Route>
-            <Route path="/about">
+            <Route path="/about" exact>
               <About />
             </Route>
-            <Route path="/works">
+            <Route path="/works" exact>
               <Works />
+            </Route>
+            <Route path="/works/:clientSlug">
+              <StudyCase />
             </Route>
           </Switch>
         </main>

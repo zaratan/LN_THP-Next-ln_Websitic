@@ -1,6 +1,5 @@
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Client.css';
-import StudyCase from 'components/StudyCase';
 
 const Client = ({ data, path, url }) => {
   console.log({
@@ -19,11 +18,6 @@ const Client = ({ data, path, url }) => {
           </div>
         </div>
       </div>
-      <main>
-        <Route path={`${path}/:clientSlug`}>
-          <StudyCase data={{clientName: data.clientName, title: data.title, description: data.description}} />
-        </Route>
-      </main>
     </div>
   );
 };

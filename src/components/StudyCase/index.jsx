@@ -1,19 +1,21 @@
 import { useParams } from "react-router";
+import data from '../../worksBySlugs.json';
 
-const StudyCase = ({ data }) => {
+const StudyCase = () => {
   let { clientSlug } = useParams();
+  const clientData = data[clientSlug];
   console.log({
-    data,
+    clientData,
     clientSlug
   });
    
   return (
     <div className="StudyCase">
-      <div className="header">{data.clientName}</div>
+      <div className="header">{clientData.clientName}</div>
       <div className="content">
-        <h2>{data.title}</h2>
+        <h2>{clientData.title}</h2>
         <div className="description">
-          {data.description && data.description !== undefined ? data.description : "[Aucune explication n'a été donnée]"}
+          {clientData.description && clientData.description !== undefined ? clientData.description : "[Aucune explication n'a été donnée]"}
         </div>
       </div>
     </div>
