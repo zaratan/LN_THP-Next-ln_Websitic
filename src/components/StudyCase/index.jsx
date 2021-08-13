@@ -1,13 +1,14 @@
 import { useParams } from 'react-router-dom';
-import data from '../../worksBySlugs.json';
+import data from '../../works.json';
+
+const parsedData = data.clients.reduce((result, client) => {
+  result[`${client.slug}-study-case`] = client;
+  return result;
+}, {});
 
 const StudyCase = () => {
   const { clientSlug } = useParams();
-  const clientData = data[clientSlug];
-  console.log({
-    clientData,
-    clientSlug,
-  });
+  const clientData = parsedData[clientSlug];
 
   return (
     <div className="StudyCase">
