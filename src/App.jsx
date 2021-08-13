@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import BtnToggle from './components/BtnToggle';
 import Home from './pages/Home';
@@ -6,13 +6,10 @@ import About from './pages/About';
 import Works from './pages/Works';
 import StudyCase from './components/StudyCase';
 import Navbar from './components/Navbar';
-import ThemeContext from './contexts/ThemeContext';
 
 function App() {
-  const { isLight } = useContext(ThemeContext);
-
   return (
-    <div className={isLight ? 'App light' : 'App dark'}>
+    <main className="App">
       <Router>
         <Navbar />
         <BtnToggle />
@@ -33,7 +30,7 @@ function App() {
           </Switch>
         </main>
       </Router>
-    </div>
+    </main>
   );
 }
 

@@ -16,6 +16,12 @@ export const ThemeContextProvider = ({ children }) => {
     }
   }, []);
 
+  useEffect(() => {
+    document
+      .getElementsByTagName('body')[0]
+      .setAttribute('class', isLight ? 'light-theme' : 'dark-theme');
+  }, [isLight]);
+
   const toggleTheme = () => {
     const newIsLight = !isLight;
     setIsLight(newIsLight);

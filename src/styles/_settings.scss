@@ -13,11 +13,7 @@ $color-4: rgb(32, 35, 42);
   padding: 0;
 }
 body {
-  margin: 0.4rem auto;
-  max-width: 1296px;
   font-family: $font-1;
-  color: $color-3;
-  background-color: $color-2;
   transition: all 0.2s ease-in-out;
 }
 li {
@@ -30,11 +26,17 @@ li {
 li:visited {
   color: $color-3;
 }
-.App.dark {
+
+.App {
+  margin: 0.4rem auto;
+  max-width: 1296px;
+}
+
+.dark-theme {
   color: $color-2;
   background-color: $color-3;
 }
-.App.light {
+.light-theme {
   color: $color-3;
   background-color: $color-2;
 }
