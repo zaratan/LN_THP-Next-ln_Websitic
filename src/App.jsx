@@ -4,8 +4,8 @@ import BtnToggle from './components/BtnToggle';
 import Home from './pages/Home';
 import About from './pages/About';
 import Works from './pages/Works';
-import StudyCase from './components/StudyCase';
 import Navbar from './components/Navbar';
+import { StudyCaseRoute } from './pages/StudyCase';
 
 function App() {
   return (
@@ -24,9 +24,7 @@ function App() {
             <Route path="/works" exact>
               <Works />
             </Route>
-            <Route path="/works/:clientSlug">
-              <StudyCase />
-            </Route>
+            <StudyCaseRoute path="/works/:clientSlug" />
           </Switch>
         </main>
       </Router>

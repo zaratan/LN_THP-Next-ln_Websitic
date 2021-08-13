@@ -9,12 +9,6 @@ const Works = () => {
   const { path, url } = useRouteMatch();
   const studyCaseListDataArray = data.clients;
 
-  const nbStudyCases = studyCaseListDataArray.length;
-  console.log({
-    data,
-    nbStudyCases,
-  });
-
   return (
     <div className="Page">
       <h3 className="Page-header">
